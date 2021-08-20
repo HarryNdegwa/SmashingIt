@@ -1,10 +1,10 @@
 import express from 'express';
-import { indexPage } from '../controllers';
-import { messages } from '../controllers/messages';
+import { addMessage, indexPage, messagesPage } from '../controllers';
 
 const indexRouter = express.Router();
 
 indexRouter.get('/', indexPage);
-indexRouter.get('/messages', messages);
+indexRouter.get('/messages', messagesPage);
+indexRouter.post('/messages', addMessage);
 
 export default indexRouter;
