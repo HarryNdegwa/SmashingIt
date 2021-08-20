@@ -1,9 +1,10 @@
 import express from 'express';
-import { testEnvVariable } from '../settings';
+import { indexPage } from '../controllers';
+import { messages } from '../controllers/messages';
+
 const indexRouter = express.Router();
 
-indexRouter.get('/', (req, res) =>
-  res.status(200).json({ message: testEnvVariable })
-);
+indexRouter.get('/', indexPage);
+indexRouter.get('/messages', messages);
 
 export default indexRouter;
